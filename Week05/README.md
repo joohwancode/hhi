@@ -9,11 +9,11 @@
 
 0. 시험 내용 받아오기: C 개발 환경에서 Week05-07 project clone
     ```sh
-    $ git clone https://github.com/SWJungle/P4a-Week05-07.git
+    $ git clone https://github.com/krafton-jungle/KJ1R-W05-07.git
     ```
 1. 답안 작성을 위한 준비: 제출자 전용 dir과 branch 생성
     ```sh
-    cd P4a-Week05-07/Week05                # Week05 dir로 이동
+    cd KJ1R-W05-07/Week05                # Week05 dir로 이동
     mkdir ${제출자ID}                      # 제출자 전용 dir 생성
     cd ${제출자ID}
     cp ../sample_user/Makefile .           # sample Makefile 복사
@@ -30,7 +30,7 @@
     ```
     - `sample_user` directory 처럼 rbtree.c 하나만 추가되면 됨 (`sample_user` directory는 건드리지 말것)
 3. 리뷰어를 위한 준비: Pull request
-    - https://github.com/SWJungle/P4a-Week05-07 에서 내 branch로 제대로 제출 되었는지 확인
+    - https://github.com/krafton-jungle/KJ1R-W05-07 에서 내 branch로 제대로 제출 되었는지 확인
     - `base:main <- compare:week05/${제출자ID}` 방향으로 pull request 생성
     - Pull request 제목에 제출자의 이름을 포함하여 reviewer가 찾기 쉽도록 함
     - comment에 구현 특징 및 특기사항 (예: 어떤 case에서 실패함)을 적어

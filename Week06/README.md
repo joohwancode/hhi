@@ -10,13 +10,13 @@
 0. 시험 내용 받아오기: C 개발 환경에서 Week05-07 project clone 혹은 pull
     1. 새로운 환경인 경우
     ```sh
-    $ git clone https://github.com/SWJungle/P4a-Week05-07.git
-    $ cd P4a-Week05-07
+    $ git clone https://github.com/krafton-jungle/KJ1R-W05-07.git
+    $ cd KJ1R-W05-07
     ```
 
     2. 지난 주에 clone 받은 Week05-07 project에서 계속할 경우
     ```sh
-    $ cd P4a-Week05-07
+    $ cd KJ1R-W05-07
     $ git checkout main
     $ git pull
     ```
@@ -39,7 +39,7 @@
     - `sample_user` directory 처럼 mm.c 하나만 추가되면 됨
     - `sample_user`, `common` directory 안의 내용은 변경하지 않도록 주의
 3. 리뷰어를 위한 준비: Pull request
-    - https://github.com/SWJungle/P4a-Week05-07 에서 내 branch로 제대로 제출 되었는지 확인
+    - https://github.com/krafton-jungle/KJ1R-W05-07 에서 내 branch로 제대로 제출 되었는지 확인
     - `base:main <- compare:week06/${제출자ID}` 방향으로 pull request 생성
     - Pull request 제목에 제출자의 이름을 포함하여 reviewer가 찾기 쉽도록 함
     - comment에 구현 특징 및 특기사항 (예: explicit까지 구현)을 적어
