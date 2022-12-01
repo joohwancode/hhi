@@ -1,7 +1,7 @@
 #include "rbtree.h"
 #include <stdlib.h>
 #include <stdio.h>
-
+//1201
 rbtree *new_rbtree(void)
 {
   // * tree = new_tree(): RB tree 구조체 생성
@@ -183,9 +183,9 @@ node_t *rbtree_find(const rbtree *t, const key_t key)
     else
       cur_node = cur_node->right;
   }
- if (cur_node -> key == key)
+ if (cur_node -> key == key && cur_node != t->nil)
           return cur_node;
-
+  
   return NULL;
 }
 
@@ -303,6 +303,18 @@ void rbtree_erase_fixup(rbtree *t, node_t *x)
   }
   x->color = RBTREE_BLACK;
 }
+
+node_t *tree_minimum(rbtree *t, node_t *cur)
+{
+  node_t *y;
+  y = cur;
+  while (y -> left != t->nil)
+  {
+    y = y->left;
+  }
+  return y;
+}
+
 int rbtree_erase(rbtree *t, node_t *z)
 {
   if (rbtree_find(t, z->key) == NULL){
@@ -350,16 +362,17 @@ int rbtree_erase(rbtree *t, node_t *z)
   return 1;
 }
 
-node_t *tree_minimum(rbtree *t, node_t *cur)
+
+void delete_one(rbtree *t, node_t *cur)
 {
-  node_t *y;
-  y = cur;
-  while (y -> left != t->nil)
+  if (cur != t->nil)
   {
-    y = y->left;
+    delete_one(t, cur->left);
+    delete_one(t, cur->right);
+    free(cur);
   }
-  return y;
 }
+
 
 void delete_rbtree(rbtree *t)
 {
@@ -371,16 +384,6 @@ void delete_rbtree(rbtree *t)
 
   free(t->nil);
   free(t);
-}
-
-void delete_one(rbtree *t, node_t *cur)
-{
-  if (cur != t->nil)
-  {
-    delete_one(t, cur->left);
-    delete_one(t, cur->right);
-    free(cur);
-  }
 }
 
 int in_order(const rbtree *t, node_t *cur, key_t *arr, size_t n, int index)
