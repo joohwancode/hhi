@@ -9,7 +9,6 @@ rbtree *new_rbtree(void)
 	node_t *nilNode = (node_t *)calloc(1, sizeof(node_t));
 	if (!p || !nilNode)
 	{
-		printf("error");
 		return 0;
 	}
 	nilNode->color = RBTREE_BLACK;
