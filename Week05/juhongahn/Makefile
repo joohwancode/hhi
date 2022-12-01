@@ -7,13 +7,13 @@ TARGET=test-rbtree
 
 $(TARGET): $(OBJS)
 	$(CC) -o $@ $(OBJS)		
-	valgrind ./test-rbtree
+	valgrind -s --leak-check=full ./test-rbtree
 
 # test: test-rbtree
 # 	./test-rbtree
 # 	valgrind ./test-rbtree
 
-test-rbtree.o: test-rbtree.c rbtree.h
+test-rbtree.o: test-rbtree.c 
 new_rbtree.o: new_rbtree.c
 rbtree_erase.o: rbtree_erase.c rotate.h
 rbtree_find.o: rbtree_find.c
@@ -26,4 +26,4 @@ delete_rbtree.o: delete_rbtree.c
 
 
 clean:
-	rm -f test-rbtree *.o
+	rm -f test-rbtree *.o ../common/test-rbtree.o
