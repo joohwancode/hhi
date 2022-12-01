@@ -188,7 +188,7 @@ node_t *rbtree_find(const rbtree *t, const key_t key) {
     }
   }
   
-  if (temp_node->key == key){
+  if ((temp_node->key == key)&&(temp_node != t->nil)){
     return temp_node;
   }else{
     return NULL;
